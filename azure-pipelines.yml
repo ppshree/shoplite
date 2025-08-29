@@ -1,0 +1,19 @@
+trigger:
+- main   
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  imageName: '<yourdockerhubusername>/shoplite'         #change dockerhub username
+
+steps:
+- task: Docker@2
+  inputs:
+    containerRegistry: 'dockerhub-service-connection'   # service connection name
+    repository: '$(imageName)'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+    tags: |
+      $(Build.BuildId)
+      latest
