@@ -285,7 +285,7 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <p className="copyright">This website is developed by Pankaj © 2025</p>
+      <p className="copyright">This website is developed by Pankaj K. © 2025</p>
     </div>
   </footer>
 
